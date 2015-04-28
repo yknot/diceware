@@ -1,10 +1,25 @@
-function diceware(n){
-	console.log(n);
+/* global $, document */
+
+// 
+function diceware(n, id){
+    $(id).empty();
+	$.getJSON("words.json", function(data) {
+        for(var i = 0; i < n; i++){
+            var index = "";
+            for(var j = 0; j < 5; j++) {
+                index = index.concat(String(Math.floor((Math.random()*6) + 1)));
+            }
+            $(id).append(data[index]);
+            $(id).append(" ");
+        }
+    });
 }
 
 
 
 $(document).ready(function() {
+    
+    diceware(6, "#result");
 
 	$("form").submit(function( event ) {
 		// get input from text box
@@ -16,9 +31,9 @@ $(document).ready(function() {
 			alert("Not a valid number\nTry something between 4 and 10");
 			event.preventDefault();
 			return;
-		};
+		}
 		// call function to get diceware words
-		diceware(n);
+		diceware(n, "#result");
 		event.preventDefault();	// stops form from submitting
 	});
 
