@@ -1,13 +1,14 @@
 /* global $, document */
 
 // 
-function diceware(n, id){
+function diceware(n, id) {
+    var i, j;
     $(id).empty();
-	$.getJSON("words.json", function(data) {
-        for(var i = 0; i < n; i++){
+	$.getJSON("words.json", function (data) {
+        for (i = 0; i < n; i++) {
             var index = "";
-            for(var j = 0; j < 5; j++) {
-                index = index.concat(String(Math.floor((Math.random()*6) + 1)));
+            for (j = 0; j < 5; j++) {
+                index = index.concat(String(Math.floor((Math.random() * 6) + 1)));
             }
             $(id).append(data[index]);
             $(id).append(" ");
@@ -37,4 +38,7 @@ $(document).ready(function() {
 		event.preventDefault();	// stops form from submitting
 	});
 
+    $("#refresh").click( function() {
+       diceware(6, "#result"); 
+    }); 
 });

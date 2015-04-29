@@ -1,26 +1,29 @@
 <!doctype html>
 <html>
 <head>
-
 	<title>Diceware Passphrase Generator</title>
 
 	<script src="jquery-1.11.2.min.js"></script>
 	<script src="diceware.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="main.css">
-
-
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC' rel='stylesheet' type='text/css'>
+    
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
-
 
 <body>
 	<h1>Diceware Passphrase Generator</h1>
     <p id="result"></p>
+    <div id="center">
+        <button id="refresh" class="btn btn-large btn-success" type="button">Refresh</button>
+    </div>
 	<form id="number">
 		<input type="text">
-		<input type="submit" value="Submit">
+		<input class="btn btn-default" type="submit" value="Submit">
 	</form>
-
 </body>
 
 </html>
