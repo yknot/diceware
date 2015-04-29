@@ -5,7 +5,11 @@ h1 {
     padding-bottom: 20px;
 }
 
-p {
+#description{
+    text-align: center;
+}
+
+#result {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
